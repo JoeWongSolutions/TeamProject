@@ -1,0 +1,21 @@
+digraph {
+	Alden; Blaine; Cary; Forrest; Graham; David; Herman; Elbert
+
+	subgraph Rel1 {
+		edge[dir = none, color = black]
+		Elbert -> Herman [label=1, color=blue];
+		Alden -> Blaine [label=7, color=blue];
+		Alden -> Cary [label=8];
+		Blaine -> Forrest [label=2, color=blue];
+		Cary -> Forrest [label=6];
+		Cary -> Graham [label=4];
+		Forrest -> Graham [label=9];
+		Forrest -> Herman [label=3, color=blue];
+		David -> Forrest [label=8];
+	}
+
+	subgraph Rel2 {
+		edge [color=black]
+		Elbert -> Graham [label=1];
+	}
+}

@@ -1,0 +1,13 @@
+Alden | Blaine | classmate
+Alden | Cary | friend
+Blaine | Forrest | met
+Cary | Forrest | neighbor
+Cary | Graham | familiar
+David | Forrest | friend
+Forrest | Graham | parent
+Forrest | Herman | schoolmate
+Elbert | Herman | knoweachother
+Elbert | Graham | know
+
+Alden
+Elbert
