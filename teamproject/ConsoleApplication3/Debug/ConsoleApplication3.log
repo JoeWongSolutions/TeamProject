@@ -1,49 +1,34 @@
 ﻿  teamproject.c
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\mu_hashtable.h(6): warning C4005: “EINVAL”: 宏重定义
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\mu_hashtable.h(6): warning C4005: “EINVAL”: 宏重定义
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\errno.h(73): note: 参见“EINVAL”的前一个定义
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\mu_hashtable.h(7): warning C4005: “EEXIST”: 宏重定义
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\mu_hashtable.h(7): warning C4005: “EEXIST”: 宏重定义
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\errno.h(49): note: 参见“EEXIST”的前一个定义
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\mu_hashtable.h(8): warning C4005: “ENOMEM”: 宏重定义
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\mu_hashtable.h(8): warning C4005: “ENOMEM”: 宏重定义
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\errno.h(45): note: 参见“ENOMEM”的前一个定义
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(239): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(239): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(289): warning C4996: 'strnicmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strnicmp. See online help for details.
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(289): warning C4996: 'strnicmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strnicmp. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(579): note: 参见“strnicmp”的声明
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(300): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(300): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(552): note: 参见“strdup”的声明
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(362): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strlwr. See online help for details.
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(363): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strlwr. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(574): note: 参见“strlwr”的声明
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(363): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(364): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(552): note: 参见“strdup”的声明
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(364): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(365): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(552): note: 参见“strdup”的声明
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(465): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(466): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1952): note: 参见“_snprintf”的声明
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(466): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(467): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(552): note: 参见“strdup”的声明
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(615): warning C4090: “函数”: 不同的“const”限定符
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(607): warning C4474: printf: 格式字符串中传递的参数太多
-  c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(607): note: 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(648): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(616): warning C4090: “函数”: 不同的“const”限定符
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(608): warning C4474: printf: 格式字符串中传递的参数太多
+  c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(608): note: 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(649): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1952): note: 参见“_snprintf”的声明
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(654): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(655): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1952): note: 参见“_snprintf”的声明
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\teamproject.c(686): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\bamboo\documents\github\teamproject\teamproject\consoleapplication3\teamproject.c(687): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
-  MU_HashTableSimpleBiDi.c
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\mu_hashtable.h(6): warning C4005: “EINVAL”: 宏重定义
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\errno.h(73): note: 参见“EINVAL”的前一个定义
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\mu_hashtable.h(7): warning C4005: “EEXIST”: 宏重定义
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\errno.h(49): note: 参见“EEXIST”的前一个定义
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\mu_hashtable.h(8): warning C4005: “ENOMEM”: 宏重定义
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\errno.h(45): note: 参见“ENOMEM”的前一个定义
-  MU_HashTable.c
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\mu_hashtable.h(6): warning C4005: “EINVAL”: 宏重定义
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\errno.h(73): note: 参见“EINVAL”的前一个定义
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\mu_hashtable.h(7): warning C4005: “EEXIST”: 宏重定义
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\errno.h(49): note: 参见“EEXIST”的前一个定义
-c:\users\bamboo\documents\teamproject\teamproject\consoleapplication3\mu_hashtable.h(8): warning C4005: “ENOMEM”: 宏重定义
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\errno.h(45): note: 参见“ENOMEM”的前一个定义
-  正在生成代码...
-  ConsoleApplication3.vcxproj -> C:\Users\BamBoo\Documents\teamproject\teamproject\Debug\ConsoleApplication3.exe
-  ConsoleApplication3.vcxproj -> C:\Users\BamBoo\Documents\teamproject\teamproject\Debug\ConsoleApplication3.pdb (Full PDB)
+  ConsoleApplication3.vcxproj -> C:\Users\BamBoo\Documents\GitHub\TeamProject\teamproject\Debug\ConsoleApplication3.exe
+  ConsoleApplication3.vcxproj -> C:\Users\BamBoo\Documents\GitHub\TeamProject\teamproject\Debug\ConsoleApplication3.pdb (Full PDB)
