@@ -1,5 +1,6 @@
 <!-- TOC -->
 
+- [任务分配](#任务分配)
 - [How to use me ?](#how-to-use-me-)
     - [In **Windows**](#in-windows)
     - [In **Linux**](#in-linux)
@@ -10,6 +11,12 @@
         - [About input.txt](#about-inputtxt)
 
 <!-- /TOC -->
+## 任务分配
+
+|图数据结构 |hashtable | 优先队列 | Dijkstra_algorithm | graphviz | 说明文档 | 实验数据 |
+-----------|----------|----------|--------------------|----------|---------|----------------|
+|HuiMIng   | HuiMing | HuiMing | HuiMing | HuiMing | HuiMing  | Ding Hao |
+
 
 ## How to use me ?
 
