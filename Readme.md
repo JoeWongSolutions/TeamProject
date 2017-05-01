@@ -1,10 +1,12 @@
 <!-- TOC -->
 
+- [可扩展与自定义的通用图算法模块与绘图](#可扩展与自定义的通用图算法模块与绘图)
 - [任务分配](#任务分配)
 - [How to use me ?](#how-to-use-me-)
     - [In **Windows**](#in-windows)
         - [就像这样](#就像这样)
-    - [In **Linux**](#in-linux)
+    - [In **Linux(Centos & ubuntu)**](#in-linuxcentos--ubuntu)
+    - [关于内存](#关于内存)
 - [Some thing you should know about this Project](#some-thing-you-should-know-about-this-project)
     - [About input.relation](#about-inputrelation)
         - [Format](#format)
@@ -12,6 +14,9 @@
         - [About input.txt](#about-inputtxt)
 
 <!-- /TOC -->
+
+##可扩展与自定义的通用图算法模块与绘图
+
 ## 任务分配
 
 |图数据结构 |hashtable | 优先队列 | Dijkstra_algorithm | graphviz | 说明文档 | 实验数据 |
@@ -36,7 +41,7 @@ git clone https://github.com/bamboovir/TeamProject_New
 
 [1]:https://github.com/bamboovir/TeamProject/blob/master/teamproject/1.gif
 
-### In **Linux**  
+### In **Linux(Centos & ubuntu)**  
 
 > use `shell` to clone this project to local.
 
@@ -46,6 +51,15 @@ cd graph
 make
 
 ```
+
+> **如果想像使用任何linux系统原生命令一样使用它，请把编译出的二进制文件放入`PATH`环境变量所在文件夹中** 就像`ls`一样
+
+### 关于内存
+
+![show1][2]
+
+[2]:https://github.com/bamboovir/TeamProject/blob/master/teamproject/Valgrind.jpg
+
 ---
 
 ## Some thing you should know about this Project
@@ -76,9 +90,10 @@ make
 #### Test
 		
 >       	    In test i use those data
->               note：true/false use to assign directed/undirected graph data时，会根据relation_name查询relation，并获取对应的distance
+>               note：true/false use to assign directed/undirected graph data时，
+>               会根据relation_name查询relation，并获取对应的distance
 
-``` 
+``` c
     			Alden | Blaine | classmate
 				Alden | Cary | friend
 				Blaine | Forrest | met
@@ -149,34 +164,32 @@ make
 	'output.dot' created, please open it in Graphviz 2.38(gvedit.exe) or above.
 ```
 	
-	测试：如果将Elbert和Graham的关系改为knoweachother, 则最短路径变为：Elbert <- Graham <- Cary <- Alden
+>  **测试：如果将Elbert和Graham的关系改为`knoweachother`, 则最短路径变为：`Elbert <- Graham <- Cary <- Alden`**
 
 ## 主程序结构说明
 
-     这个主程序还是从二维数组的dijkstra代码修改而来的。
-   
-	 所有的关系，通过input.relation来定义。关系(struct MyRelation)包括relation_name, distance, is_bidirectional
-	 这些关系保存在一个hashtable中(struct MU_HashTable)，即graph.relations。
-	 在输入graph data时，会根据relation_name查询relation，并获取对应的distance & is_bidirectional
-
-	 为了有效处理稀疏矩阵，利用2层hash table模拟二维数组;
-	 为了降低存储空间，在这个2层hash table中仅保存node index，由于不需要计算hashvalue，所以access speed更快;
-	 因此这个2层hash table的第一层(graph.distances)的Key是row index、Value是第2层hash table;
-	 第2层hash table的Key是column index、Value是"该column index对应的node"与"该row index对应的node"之间的distance;
-	 为了简单起见，distance使用long类型;
-	 由于使用 row index & column index 作为Key，因此它不需要malloc & free;
-	 同样的道理，distance由于使用long类型，它也不需要malloc & free;
-	 由于hash table内部使用NULL来判断是否存在该Key->Value pair，因此index range为[1..nodeCount], 不是[0..nodeCount-1]
-	 	 
-	 由于在graph data中，仅保存node index，所以，需要另外单独保存node_name & node_index的对应关系
-	 这里采用了双向hash table(struct MU_HashTableSimpleBiDi)，即同时保存[Key->Value pair]和[Value->Key pair]。
-	 因为既需要根据node name检索node index，又需要根据node index检索node name
+这个主程序还是从二维数组的`dijkstra`代码修改而来的。
+所有的关系，通过`input.relation`来定义。关系(`struct MyRelation`)包括`relation_name`, `distance`, `is_bidirectional`
+这些关系保存在一个`hashtable中(struct MU_HashTable)`，即`graph.relations`。
+在输入graph data时，会根据`relation_name`查询`relation`，并获取对应的`distance` & `is_bidirectional`
+为了有效处理稀疏矩阵，利用2层`hash table`模拟二维数组;
+为了降低存储空间，在这个2层`hash table`中仅保存`node index`，由于不需要计算`hashvalue`，所以`access speed`更快;
+因此这个2层`hash table`的第一层(`graph.distances`)的`Key`是`row index`、`Value`是第2层`hash table`;
+第2层`hash table`的`Key`是`column index`、`Value`是"该`column index`对应的`node`"与"该`row index`对应的node"之间的`distance`;
+为了简单起见，`distance`使用`long`类型;
+由于使用 `row index & column index` 作为`Key`，因此它不需要`malloc & free`;
+同样的道理，`distance`由于使用`long`类型，它也不需要`malloc & free`;
+由于`hash table`内部使用`NULL`来判断是否存在该`Key->Value pair`，因此`index range`为`[1..nodeCount]`, 不是`[0..nodeCount-1]` 	 
+由于在`graph data`中，仅保存`node index`，所以，需要另外单独保存`node_name` & `node_index`的对应关系
+这里采用了双向`hash table(struct MU_HashTableSimpleBiDi)`，即同时保存`[Key->Value pair]`和`[Value->Key pair]`。
+因为既需要根据`node name`检索`node index`，又需要根据`node index`检索`node name`
 
 ## 生成 Graphviz(Version 2.38) DOT 文件
 
-   使用的DOT文件模板(其中Rel1为undirected graph, Rel2为directed graph)，
+   使用的`DOT`文件模板(其中Rel1为`undirected graph`, Rel2为`directed graph`)，
 	 模板中包括了node、edge、默认颜色、定制颜色、定制edge标签等，基本满足我们的需求：	 
-     ```
+	 
+     ```c
 							digraph {
 							
 							    A; B; C
@@ -197,9 +210,10 @@ make
 							}
 	  ```
       
-    定义struct MyGraphviz结构体：
-		isShortestPath表示该edge是否位于最短路径上，0 - NO、1 - YES。
-		在计算出最短路径后，需要更新isShortestPath。由于edge需要两个nodes来标识，所以使
-		用pairName是作为edge的唯一标识，格式为"idSource idTarget"
-		isBidirectional表示该edge是否为无向图/双向图，0 - NO、1 - YES	 
+###    定义struct MyGraphviz结构体：
+
+>	    isShortestPath表示该`edge`是否位于最短路径上，0 - NO、1 - YES。
+>		在计算出最短路径后，需要更新isShortestPath。由于edge需要两个nodes来标识，所以使
+>		用pairName是作为edge的唯一标识，格式为"idSource idTarget"
+>		isBidirectional表示该edge是否为无向图/双向图，0 - NO、1 - YES	 
 	 
