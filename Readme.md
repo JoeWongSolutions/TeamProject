@@ -17,6 +17,11 @@
 
 ##可扩展与自定义的通用图算法模块与绘图
 
+- [x] Graph
+- [x] hashtable
+- [x] 优先队列
+- [x] Dijkstra_algorithm
+
 ## 任务分配
 
 |图数据结构 |hashtable | 优先队列 | Dijkstra_algorithm | graphviz | 说明文档 | 实验数据 |
@@ -187,9 +192,9 @@ make
 ## 生成 Graphviz(Version 2.38) DOT 文件
 
    使用的`DOT`文件模板(其中Rel1为`undirected graph`, Rel2为`directed graph`)，
-	 模板中包括了node、edge、默认颜色、定制颜色、定制edge标签等，基本满足我们的需求：	 
-	 
-     ```c
+	 模板中包括了node、edge、默认颜色、定制颜色、定制edge标签等，基本满足我们的需求：
+	 	 
+```c
 							digraph {
 							
 							    A; B; C
@@ -208,7 +213,7 @@ make
 							    }
 							
 							}
-	  ```
+```
       
 ###    定义struct MyGraphviz结构体：
 
