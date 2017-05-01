@@ -33,7 +33,9 @@ git clone https://github.com/bamboovir/TeamProject_New
 > open with Visual Studio 2013 / 2015 (use ConsoleApplication3.sln）, enter F5 to compile and run.)
 #### 就像这样
 ![show][1]
+
 [1]:https://github.com/bamboovir/TeamProject/blob/master/teamproject/1.gif
+
 ### In **Linux**  
 
 > use `shell` to clone this project to local.
