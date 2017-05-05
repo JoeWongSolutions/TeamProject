@@ -51,17 +51,29 @@ git clone https://github.com/bamboovir/TeamProject_New
 > use `shell` to clone this project to local.
 
 ```shell
-git clone https://github.com/bamboovir/TeamProject_New
+git clone https://github.com/bamboovir/TeamProject
 cd graph
 make
 
 ```
 
 > **如果想像使用任何linux系统原生命令一样使用它，请把编译出的二进制文件放入`PATH`环境变量所在文件夹中** 就像`ls`一样
+
 ```shell
 echo $PATH
 after finding the path use:
 cp teamproject /usr/local/bin/teamproject
+```
+
+> To run the program
+
+```shell
+If running in manual entry mode use: ./teamproject
+If running with input.txt auto entry mode use: ./teamproject < input.txt
+
+If having trouble running the program, make sure to use:
+chmod +x teamproject
+```
 
 > To Install Graphviz.
 
@@ -198,20 +210,17 @@ These relations are stored in a `hashtable(struct MU_HashTable)`，as `graph.rel
 When inputing graph data, the variable `relation_name` corresponds to a `relation` which derives `distance` & `is_bidirectional`
 In order to effectively handle sparse arrays，We use a double layer `hash table` to represent a 2d space;
 In order to minimize space requirements，the double layer `hash table` only saves `node index`，Since we don't need to store `hashvalue`，`access speed` increases;
-因此这个2层`hash table`的第一层(`graph.distances`)的`Key`是`row index`、`Value`是第2层`hash table`;
-第2层`hash table`的`Key`是`column index`、`Value`是"该`column index`对应的`node`"与"该`row index`对应的node"之间的`distance`;
-为了简单起见，`distance`使用`long`类型;
-由于使用 `row index & column index` 作为`Key`，因此它不需要`malloc & free`;
-同样的道理，`distance`由于使用`long`类型，它也不需要`malloc & free`;
-由于`hash table`内部使用`NULL`来判断是否存在该`Key->Value pair`，因此`index range`为`[1..nodeCount]`, 不是`[0..nodeCount-1]` 	 
-由于在`graph data`中，仅保存`node index`，所以，需要另外单独保存`node_name` & `node_index`的对应关系
-这里采用了双向`hash table(struct MU_HashTableSimpleBiDi)`，即同时保存`[Key->Value pair]`和`[Value->Key pair]`。
-因为既需要根据`node name`检索`node index`，又需要根据`node index`检索`node name`
+Thus the first layer of the double layer `hash table`(`graph.distances`)'s`Key` is `row index`、`Value`is the second layer's `hash table` key;
+Second layer `hash table`'s`Key`is`column index`、`Value`is" the distance between the node in `column index` and the node in `row index`;
+To simplify the representation of `distance`，we chose to use `long` variable type;
+Since we use `row index & column index` as `Key`，we won't need to `malloc & free`;
+Similarly，since `distance`is of type`long`，we won't be needing `malloc & free`;
+For`hash table`since we use`NULL`in order to check if`Key->Value pair` exists，we start the`index`at 1.`[1..nodeCount]`, rather than `[0..nodeCount-1]` 	 
+Since`graph data` contains only `node index`，we must save the link between `node_name` & `node_index` so we use `hash table(struct MU_HashTableSimpleBiDi)`，while saving `[Key->Value pair]`and `[Value->Key pair]`at the same time.
 
-## 生成 Graphviz(Version 2.38) DOT 文件
+## Using Graphviz(Version 2.38) DOT 
 
-   使用的`DOT`文件模板(其中Rel1为`undirected graph`, Rel2为`directed graph`)，
-	 模板中包括了node、edge、默认颜色、定制颜色、定制edge标签等，基本满足我们的需求：
+   To use`DOT`template (Rel1 represents `undirected graph`, Rel2 represents `directed graph`)，	 
 	 	 
 ```c
 							digraph {
@@ -234,10 +243,10 @@ In order to minimize space requirements，the double layer `hash table` only sav
 							}
 ```
       
-###    定义struct MyGraphviz结构体：
+###    Definition of struct MyGraphviz：
 
->	    isShortestPath表示该`edge`是否位于最短路径上，0 - NO、1 - YES。
->		在计算出最短路径后，需要更新isShortestPath。由于edge需要两个nodes来标识，所以使
->		用pairName是作为edge的唯一标识，格式为"idSource idTarget"
->		isBidirectional表示该edge是否为无向图/双向图，0 - NO、1 - YES	 
+>	    isShortestPath tells whether the `edge` is on the shortest path，0 - NO、1 - YES。
+>		When calculating distances, we need to update isShortestPath。Since an edge requires two nodes to represent，
+>		we use pairName to show an edge，format is: "idSource idTarget"
+>		isBidirectional represents whether the edge is directed，0 - NO、1 - YES	 
 	 
