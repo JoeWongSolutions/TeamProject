@@ -101,6 +101,7 @@ int main(int argc, char* argv[])
 	MyGraph   graph;
 	int idsource;
 	int iddestination;
+    int error_name_count = 0;
 	char str[MY_TEMP_STRING_MAX_LEN];
 
 	if (InitGraph(&graph) == 0)
@@ -124,17 +125,60 @@ int main(int argc, char* argv[])
 	do 
 	{
 		printf("\n\nTo calculate the shortest path, please input the source node: ");
-		if (NULL == my_safe_gets(str, sizeof(str)))
+        if (NULL == my_safe_gets(str, sizeof(str))){
+            printf("PLEASE ENTER A PERSON !\n");
+            error_name_count += 1;
+        if (error_name_count == 3) {
+            printf("You have entered error input for 3 times ! Automatically stop!!!\n");
+            error_name_count = 0;
+
+            exit(-1);
+        }
 			continue;
+        }
+
 		idsource = IndexOfNode(&graph, trimspace(str));
+        if (idsource == -1) {
+            printf("CAN NOT FOUND THIS PERSON IN DATABASE !\n");
+            error_name_count += 1;
+        }
+
+        if (error_name_count == 3) {
+            printf("You have entered error input for 3 times ! Automatically stop!!!\n");
+            error_name_count = 0;
+            exit(-1);
+        }
+
 	} while (idsource == -1);
+
+        error_name_count = 0;
 
 	do 
 	{
 		printf("\n\nPlease input the destination node: ");
-		if (NULL == my_safe_gets(str, sizeof(str)))
+        if (NULL == my_safe_gets(str, sizeof(str))){
+            printf("PLEASE ENTER A PERSON !\n");
+            error_name_count += 1;
+        if (error_name_count == 3) {
+            printf("You have entered error input for 3 times ! Automatically stop!!!\n");
+            error_name_count = 0;
+            exit(-1);
+        }
 			continue;
+        }
+
 		iddestination = IndexOfNode(&graph, trimspace(str));
+        if (iddestination == -1) {
+            printf("CAN NOT FOUND THIS PERSON IN DATABASE !\n");
+            error_name_count += 1;
+        }
+
+        if (error_name_count == 3) {
+            printf("You have entered error input for 3 times ! Automatically stop!!!\n");
+            error_name_count = 0;
+            exit(-1);
+        }
+
 	} while (iddestination == -1);
 
 	Dijkstra(&graph, idsource, iddestination);
